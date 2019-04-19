@@ -40,8 +40,8 @@ Enter Login Information<br><br><br>
 <img src="revaturelogo.png" style="width:100px; height:36.5px"><br><br>
 Manager ID: <input type="text" id="t1" style="width:200px"><br><br>
 Password: <input type="password" id="pas1" style="width:200px"><br><br>
-<input type="button" id="sub1" class="button" value="Login" onclick="location.href='managerhome.html';"><br><br>
-Wrong Place? <a href="employeelogin.html">Employee Login</a>
+<input type="button" id="sub1" class="button" value="Login" onclick="location.href='managerhome.jsp';"><br><br>
+Wrong Place? <a href="employeelogin.jsp">Employee Login</a>
 </fieldset>
 </div>
 </body>

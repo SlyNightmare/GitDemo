@@ -38,10 +38,15 @@ body {
 <fieldset style="width:400px; height:300px">
 Enter Login Information<br><br><br>
 <img src="revaturelogo.png" style="width:100px; height:36.5px"><br><br>
-Employee ID: <input type="text" id="t1" style="width:200px"><br><br>
-Password: <input type="password" id="pas1" style="width:200px"><br><br>
-<input type="button" id="sub1" class="button" value="Login" onclick="location.href='employeehome.html';"><br><br>
-Wrong Place? <a href="managerlogin.html">Manager Login</a>
+
+<form id="loginfields" action="login" method="post">
+Employee ID: <input type="text" name="username" style="width:200px"><br><br>
+Password: <input type="password" name="password" style="width:200px"><br><br>
+<input type="button" id="sub1" class="button" value="Login" onclick="location.href='employeehome.jsp';">
+</form>
+
+<br><br>
+Wrong Place? <a href="managerlogin.jsp">Manager Login</a>
 </fieldset>
 </div>
 </body>

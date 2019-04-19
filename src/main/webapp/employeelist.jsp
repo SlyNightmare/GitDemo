@@ -11,24 +11,39 @@
 <nav class="navbar navbar">
 	
 	<ul class="nav navbar-nav">
-		<li><a href="managerhome.html">Home</a></li>
+		<li><a href="managerhome.jsp">Home</a></li>
 		<li class="dropdown">
 			<a href="javascript:void(0)" class="dropbtn">Requests</a>
 				<div class="dropdown-content">
-				<a href="pendingrequests.html">View Open Requests</a>
-				<a href="pastrequests.html">Request History</a>
+				<a href="pendingrequests.jsp">View Open Requests</a>
+				<a href="pastrequests.jsp">Request History</a>
 				</div>
 		</li>
 		<li class="dropdown">
 			<a href="javascript:void(0)" class="dropbtn active">Employees</a>
 				<div class="dropdown-content">
-				<a href="employeelist.html">Active Employees</a>
-				<a href="requestbyemployee.html">Requests By Employee</a>
+				<a href="employeelist.jsp">Active Employees</a>
+				<a href="requestbyemployee.jsp">Requests By Employee</a>
 				</div>
 		</li>
-		<li style="float:right"><a href="managerlogin.html">Logout</a></li>
+		<li style="float:right"><a href="managerlogin.jsp">Logout</a></li>
 	</ul>
-
 </nav>
+
+<table>
+	<thead>
+		<tr>
+			<th>Employee ID</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Username</th>
+			<th>Password</th>
+			<th>Position</th>
+		</tr>
+	</thead>
+	<tbody name="employeeTable"></tbody>
+</table>
+
+<script src="./employee.js"></script>
 </body>
 </html>

@@ -33,8 +33,8 @@ fieldset {
 <div>
 <fieldset style="width:400px; height:300px">
 Select Portal<br><br><br><br>
-<a href="managerlogin.html" class="button">Manager Login</a><br><br><br><br><br>
-<a href="employeelogin.html" class="button">Employee Login</a>
+<a href="managerlogin.jsp" class="button">Manager Login</a><br><br><br><br><br>
+<a href="employeelogin.jsp" class="button">Employee Login</a>
 </fieldset>
 </div>
 

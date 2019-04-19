@@ -15,20 +15,31 @@
 		<li class="dropdown">
 			<a href="javascript:void(0)" class="dropbtn">Requests</a>
 				<div class="dropdown-content">
-				<a href="pendingrequests.html">View Open Requests</a>
-				<a href="pastrequests.html">Request History</a>
+				<a href="pendingrequests.jsp">View Open Requests</a>
+				<a href="pastrequests.jsp">Request History</a>
 				</div>
 		</li>
 		<li class="dropdown">
 			<a href="javascript:void(0)" class="dropbtn">Employees</a>
 				<div class="dropdown-content">
-				<a href="employeelist.html">Active Employees</a>
-				<a href="requestbyemployee.html">Requests by Employee</a>
+				<a href="employeelist.jsp">Active Employees</a>
+				<a href="requestbyemployee.jsp">Requests by Employee</a>
 				</div>
 		</li>
-		<li style="float:right"><a href="managerlogin.html">Logout</a></li>
+		<li style="float:right"><a href="managerlogin.jsp">Logout</a></li>
 	</ul>
 
+<fieldset>
+<legend>Requests</legend>
+<a href="pendingrequests.jsp">View All Open Requests</a><br>
+<a href="pastrequests.jsp">View All Past Requests</a> 
+</fieldset>
+
+<fieldset>
+<legend>Employees</legend>
+<a href="employeelist.jsp">View All Employees</a><br>
+<a href="requestbyemployee.jsp">View Requests By Employee ID</a>"
+</fieldset>
 </nav>
 </body>
 </html>

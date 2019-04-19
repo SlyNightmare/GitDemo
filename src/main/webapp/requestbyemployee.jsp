@@ -31,8 +31,21 @@
 
 </nav>
 <br>
+<form id="selectemployee">
 Select Employee ID:
 <input type="number">
+</form>
 <br><br>
+<table>
+	<thead>
+		<tr>
+			<th>Request ID</th>
+			<th>Request Date</th>
+			<th>Request Amount</th>
+			<th>Request Reason</th>
+			<th>Request Approval</th>
+		</tr>
+	</thead>
+</table>
 </body>
 </html>

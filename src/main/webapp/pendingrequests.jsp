@@ -30,5 +30,17 @@
 	</ul>
 
 </nav>
+<table>
+	<thead>
+		<tr>
+			<th>Request ID</th>
+			<th>Request Date</th>
+			<th>Request Amount</th>
+			<th>Request Reason</th>
+			<th>Request Approval</th>
+		</tr>
+	</thead>
+	<tbody id="allopenrequests"></tbody>
+</table>
 </body>
 </html>

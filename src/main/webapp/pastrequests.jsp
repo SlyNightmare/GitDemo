@@ -29,7 +29,18 @@
 		</li>
 		<li style="float:right"><a href="managerlogin.jsp">Logout</a></li>
 	</ul>
-
 </nav>
+<table name="pastrequests>
+	<thead>
+		<tr>
+			<th>Request ID</th>
+			<th>Request Date</th>
+			<th>Request Amount</th>
+			<th>Request Reason</th>
+			<th>Request Approval</th>
+		</tr>
+	</thead>
+	<tbody id="allclosedrequests"></tbody>
+</table>
 </body>
 </html>

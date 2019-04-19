@@ -28,7 +28,17 @@
 		</li>
 		<li style="float:right"><a href="employeelogin.jsp">Logout</a></li>
 	</ul>
-
+<form id="requestform">
+Input Date<br>
+<input type="text" id="date"><br>
+Request Amount<br>
+<input type="text" id="amount"><br>
+Reason for Request<br>
+<input type="text" id="note"><br>
+Approval Status<br>
+<input type="text" id="approval"><br><br>
+<button type="button" id="submitrequest">Submit</button>
+</form>
 </nav>
 </body>
 </html>

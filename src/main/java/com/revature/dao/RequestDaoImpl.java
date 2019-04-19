@@ -16,20 +16,15 @@ public class RequestDaoImpl implements RequestDao {
 	@Override
 	public List<Request> getAllRequests() {
 		List<Request> requests = new ArrayList<>();
-		//Get our connection
 		try (Connection conn = ConnectionFactory.getConnection()){
-			//Create our statement to communicate with the database
 			Statement stmt = conn.createStatement();
 			
-			//Execute the statement, all matched records can be found in the ResultSet
 			ResultSet rs = stmt.executeQuery("SELECT * FROM requests");
 			
-			//Populate our list of requests from the ResultSet
 			while (rs.next()) {
-				requests.add(new Request(rs.getInt("id"), rs.getString("date"), rs.getInt("amount"), rs.getString("note"), rs.getString("approval")));
+				requests.add(new Request(rs.getInt("id"), rs.getInt("employeeid"), rs.getInt("amount"), rs.getString("note"), rs.getString("status"), rs.getString("manager")));
 			}
 			
-			//Return our Requests so that the application can further manipulate
 			return requests;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -45,19 +40,17 @@ public class RequestDaoImpl implements RequestDao {
 
 	@Override
 	public Request createRequest(Request request) {
-		//Get a connection to our Data Source
 		try (Connection conn = ConnectionFactory.getConnection()){
-			//Initialize our Insert statement
-			PreparedStatement stmt = conn.prepareStatement("INSERT INTO requests (id, date, amount, note, approval) VALUES (?, ?, ?, ?, ?)");
+			PreparedStatement stmt = conn.prepareStatement("INSERT INTO requests (id, employeeid, amount, note, status, manager) VALUES (?, ?, ?, ?, ?, ?)");
 			
-			//Set the values of our Insert Statement to help prevent SQL Injection
 			stmt.setInt(1, request.getId());
-			stmt.setString(2, request.getDate());
+			stmt.setInt(2, request.getEmployeeid());
 			stmt.setInt(3, request.getAmount());
 			stmt.setString(4, request.getNote());
-			stmt.setString(5, request.getApproval());
+			stmt.setString(5, request.getStatus());
+			stmt.setString(6, request.getManager());
+
 			
-			//Execute the query, determining the number of rows that were affected
 			int rowsAffected = stmt.executeUpdate();
 			if (rowsAffected == 1)
 				return request;

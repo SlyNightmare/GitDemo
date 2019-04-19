@@ -28,7 +28,18 @@
 		</li>
 		<li style="float:right"><a href="employeelogin.jsp">Logout</a></li>
 	</ul>
-
 </nav>
+<table>
+	<thead>
+		<tr>
+			<th>Request ID</th>
+			<th>Request Date</th>
+			<th>Request Amount</th>
+			<th>Request Reason</th>
+			<th>Request Approval</th>
+		</tr>
+	</thead>
+	<tbody id="myclosedrequestTable"></tbody>
+</table>
 </body>
 </html>

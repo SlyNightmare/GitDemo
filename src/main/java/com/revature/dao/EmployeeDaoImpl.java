@@ -16,20 +16,16 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	@Override
 	public List<Employee> getAllEmployees() {
 		List<Employee> employees = new ArrayList<>();
-		//Get our connection
+		
 		try (Connection conn = ConnectionFactory.getConnection()){
-			//Create our statement to communicate with the database
 			Statement stmt = conn.createStatement();
 			
-			//Execute the statement, all matched records can be found in the ResultSet
 			ResultSet rs = stmt.executeQuery("SELECT * FROM employees");
 			
-			//Populate our list of employees from the ResultSet
 			while (rs.next()) {
-				employees.add(new Employee(rs.getInt("id"), rs.getString("fname"), rs.getString("lname"), rs.getInt("social"), rs.getInt("phone"), rs.getString("address"), rs.getString("username"), rs.getString("password")));
+				employees.add(new Employee(rs.getInt("id"), rs.getString("fname"), rs.getString("lname"), rs.getString("username"), rs.getString("password"), rs.getString("position")));
 			}
 			
-			//Return our Employees so that the application can further manipulate
 			return employees;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -45,22 +41,17 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
 	@Override
 	public Employee createEmployee(Employee employee) {
-		//Get a connection to our Data Source
 		try (Connection conn = ConnectionFactory.getConnection()){
-			//Initialize our Insert statement
-			PreparedStatement stmt = conn.prepareStatement("INSERT INTO employees (id, fname, lname, social, phone, address, username, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+			PreparedStatement stmt = conn.prepareStatement("INSERT INTO employees (id, fname, lname, username, password, position) VALUES (?, ?, ?, ?, ?, ?)");
 			
-			//Set the values of our Insert Statement to help prevent SQL Injection
 			stmt.setInt(1, employee.getId());
 			stmt.setString(2, employee.getFname());
 			stmt.setString(3, employee.getLname());
-			stmt.setInt(4, employee.getSocial());
-			stmt.setInt(5, employee.getPhone());
-			stmt.setString(6, employee.getAddress());
-			stmt.setString(7, employee.getUsername());
-			stmt.setString(8, employee.getPassword());
+			stmt.setString(4, employee.getUsername());
+			stmt.setString(5, employee.getPassword());
+			stmt.setString(6, employee.getPosition());
+
 			
-			//Execute the query, determining the number of rows that were affected
 			int rowsAffected = stmt.executeUpdate();
 			if (rowsAffected == 1)
 				return employee;
